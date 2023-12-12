@@ -1,0 +1,220 @@
+body{
+  background-image: url("../resources/background.jpg");
+  background-attachment: fixed;
+  display: flex;
+  flex: row; 
+  
+}
+
+input{
+  font-size: 15px;
+}
+
+h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+
+/*The entire form with all the fields.*/
+.registration-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 30px;
+}
+
+.login-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 30px;
+    height: 300px;
+}
+
+label, legend{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 5px;
+    font-weight: 800;
+    display: block;
+}
+
+
+.name-surname-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.small-field, .big-field, .country-select{
+    background-color: rgb(235, 235, 235);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.small-field{
+    width: 160px;
+}
+  
+.big-field {
+    width: 360px;
+}
+
+.small-field:hover, .big-field:hover {
+  background-color: white;
+  box-shadow: 0 0 7px rgba(85, 85, 85, 0.7);
+}
+
+.selectable-options-container{
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+}
+
+.selectable-options{
+  display: flex;
+  flex-direction: row;
+}
+
+.selectable-value{
+  width: 20px;
+}
+
+.selectable-label{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 3px 20px 0px 3px; 
+}
+
+.country-select-container{
+  padding-left: 20px;
+}
+
+.country-select{
+  width: 380px;
+  margin-right: 20px;
+}
+
+.terms-and-conditions {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  gap: 5px;
+}
+
+.terms-and-conditions {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  gap: 5px;
+}
+
+.checkbox{
+  width: 15px;
+  margin: 0;
+}
+
+.login-button{
+  background-color: rgb(12, 125, 12);
+  color: aliceblue;
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.map-button{
+  background-color: rgb(38, 38, 201);
+  color: aliceblue;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.map{
+  height: 0px; 
+  width: 90%;
+}
+
+.password-field{
+  position: relative;
+}
+
+.show-password{
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.password-strength{
+  position: absolute;  
+  right: 48%;
+  top: 0;
+  background-color: rgb(225, 39, 36);
+  height: 20px;
+  width: 130px;
+  padding-top: 2px;
+  text-align: center;
+  vertical-align: middle;
+  visibility:hidden;
+}
+
+
+.warnings{
+  position: absolute;
+  text-align: center;
+  margin-left: 198px;
+  margin-top: -67px;
+  padding: 4px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+
+.hidden{
+  display: none;
+}
+
+.keeper-price-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  display: none;
+}
+
+.cat-keeper-price-container, .dog-keeper-price-container{
+    display: none;
+}
+
+textarea{
+  resize: none;
+}
+
