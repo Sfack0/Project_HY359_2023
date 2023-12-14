@@ -33,15 +33,15 @@ import mainClasses.Review;
 public class InitDatabase {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        InitDatabase init = new InitDatabase();
-        init.initDatabase();
-        init.initTables();
-        init.addToDatabaseExamples();
-        init.updateRecords();
-        init.databaseToJSON();
+            InitDatabase init = new InitDatabase();
+            init.dropDatabase();
+//            init.deleteRecords();
+//            init.initDatabase();
+//            init.initTables();
+//            init.addToDatabaseExamples();
+//            init.updateRecords();
+//            init.databaseToJSON();
 
-//         init.dropDatabase();
-//         init.deleteRecords();
     }
 
     public void dropDatabase() throws SQLException, ClassNotFoundException {

@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -75,6 +76,34 @@ public class EditPetOwnersTable {
         return null;
     }
 
+    public ArrayList<PetOwner> databaseToAllPetOwners() throws SQLException, ClassNotFoundException {
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("SELECT * FROM petowners");
+            if (rs != null) {
+                ArrayList<PetOwner> petOwnersList = new ArrayList<>();
+
+                while (rs.next()) {
+                    String json = DB_Connection.getResultsToJSON(rs);
+                    Gson gson = new Gson();
+                    PetOwner user = gson.fromJson(json, PetOwner.class);
+                    petOwnersList.add(user);
+                }
+
+                return petOwnersList;
+            }
+
+            return new ArrayList<>();  // if rs is null
+        } catch (Exception e) {
+            System.err.println("Got an exception! 2");
+            System.err.println(e.getMessage());
+        }
+
+        return new ArrayList<>();  // return an empty list if an exception occurs
+    }
    
     
     public PetOwner databaseToPetOwners(String username, String password) throws SQLException, ClassNotFoundException{
@@ -192,6 +221,31 @@ public class EditPetOwnersTable {
         }
     }
 
+    public void deletePetOwner(String userID) throws SQLException, ClassNotFoundException {
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        try {
+            PetOwner existingUser = checkIfUserExists("owner_id", userID);
+
+            if (existingUser != null) {
+                String deleteQuery = "DELETE FROM pets WHERE owner_id = " + userID + ";";
+                stmt.executeUpdate(deleteQuery);
+
+                deleteQuery = "DELETE FROM petowners WHERE owner_id = " + userID + ";";
+                stmt.executeUpdate(deleteQuery);
+
+                System.out.println("# The pet owner with userID '" + userID + "' was successfully deleted from the database.");
+            } else {
+                System.out.println("# Pet owner with userID '" + userID + "' not found in the database.");
+            }
+
+            stmt.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EditPetOwnersTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
    
 
 }

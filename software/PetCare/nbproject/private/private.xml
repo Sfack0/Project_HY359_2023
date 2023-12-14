@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
         <group name="Project">
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project/software/Ex2_3/src/java/servlets/ChangeValueServlet.java</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project/software/Ex2_3/web/register.html</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project/software/Ex2_3/web/Register_Login_Client/js/script.js</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project/software/Ex2_3/web/Register_Login_Client/loggedin.html</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project/software/Ex2_3/web/Register_Login_Client/js/ajax.js</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/database/tables/EditPetOwnersTable.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/database/tables/EditPetKeepersTable.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/CheckEmailServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/DeletePetOwnerServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/AddPetKeeperServlet.java</file>
         </group>
     </open-files>
 </project-private>

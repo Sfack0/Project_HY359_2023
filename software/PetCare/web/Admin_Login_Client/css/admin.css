@@ -1,0 +1,118 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(105, 105, 105);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+.checked{
+    color: #ffd700; /* Change color on hover */
+}
+
+
+.user-sections{
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-profiles{
+    padding: 10px;
+    width: 40%;
+    background-color: rgb(216, 216, 216);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pet-owner, .pet-keeper{
+    border: 1px solid black;
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pet-owner p, .pet-keeper p{
+    margin: 5px 0;
+}
+
+.delete-button, .logout-button{
+    background-color: rgb(253, 0, 0);
+    color: aliceblue;
+    padding: 5px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.logout-button{
+    position: absolute;
+    top: 0;
+    right: 50px;
+
+    font-size: 16px;
+
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#pets-chart,
+#users-chart {
+    width: 45%; /* Adjust the width based on your preference */
+    height: 400px; /* Adjust the height based on your preference */
+    margin: 10px;
+    border: 1px solid #ddd; /* Add a border for separation */
+    border-radius: 8px; /* Optional: Add some border-radius for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+    background-color: rgb(216, 216, 216);
+}
+
+@media (max-width: 768px) {
+    #pets-chart,
+    #users-chart {
+        width: 100%; /* Make the charts take the full width on smaller screens */
+    }
+}
+

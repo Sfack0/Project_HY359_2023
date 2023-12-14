@@ -300,7 +300,15 @@ function checkOutdoor(){
       password = $('#password-login').val();
     }
 
+    if(username === 'admin' && password === 'admin12*' ){
+        user = 'admin';
+        userType = 'admin';
+        setCookie('user', user, 30);
+        setCookie('userType', userType, 30);
+        window.location.href = 'Admin_Login_Client/adminViewUsers.html';
 
+        return;
+    }
 
     tryToLogin(username, password, function(isValidUser, userJson){
         if(isValidUser){
@@ -331,7 +339,11 @@ function logOut(){
 
 function alreadyLoggedIn(){
     if (getCookie("user") !== null){
-      window.location.href = 'Register_Login_Client/loggedin.html';
+      if(getCookie("user") === 'admin'){
+        window.location.href = 'Admin_Login_Client/adminViewUsers.html';
+      }else{
+        window.location.href = 'Register_Login_Client/loggedin.html';
+      }
     }
 }
 

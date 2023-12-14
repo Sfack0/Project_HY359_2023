@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Register_Login_Client/js/cookies.js"></script>
+    <script src="../Register_Login_Client/js/script.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/adminAjax.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Admin</title>
+</head>
+<body onload="loadUsers()">
+    <header>
+        <h1>Welcome Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="adminViewUsers.html" class="checked">View Users</a></li>
+                <li><a href="adminStats.html">Stats</a></li>
+            </ul>
+        </nav>
+        <button onclick="logOut()" class="logout-button">Log Out</button>
+
+    </header>
+    <main class="user-sections">
+        <section class="user-profiles petowner-profiles">
+            <h2>Pet Owners</h2>
+
+           
+        </section>
+        <section class="user-profiles petkeeper-profiles">
+            <h2>Pet Keepers</h2>
+
+        </section>
+    </main>
+    
+</body>
+</html>

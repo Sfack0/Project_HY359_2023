@@ -40,6 +40,26 @@
         <servlet-name>ChangeValueServlet</servlet-name>
         <servlet-class>servlets.ChangeValueServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetPetOwners</servlet-name>
+        <servlet-class>servlets.GetPetOwners</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetPetKeepers</servlet-name>
+        <servlet-class>servlets.GetPetKeepers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePetOwnerServlet</servlet-name>
+        <servlet-class>servlets.DeletePetOwnerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePetKeeperServlet</servlet-name>
+        <servlet-class>servlets.DeletePetKeeperServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetPetsServlet</servlet-name>
+        <servlet-class>servlets.GetPetsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetKeeper</servlet-name>
         <url-pattern>/GetKeeper</url-pattern>
@@ -79,6 +99,26 @@
     <servlet-mapping>
         <servlet-name>ChangeValueServlet</servlet-name>
         <url-pattern>/ChangeValueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetPetOwners</servlet-name>
+        <url-pattern>/GetPetOwners</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetPetKeepers</servlet-name>
+        <url-pattern>/GetPetKeepers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePetOwnerServlet</servlet-name>
+        <url-pattern>/DeletePetOwnerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePetKeeperServlet</servlet-name>
+        <url-pattern>/DeletePetKeeperServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetPetsServlet</servlet-name>
+        <url-pattern>/GetPetsServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

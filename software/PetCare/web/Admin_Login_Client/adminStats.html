@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Register_Login_Client/js/cookies.js"></script>
+    <script src="../Register_Login_Client/js/script.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/adminAjax.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Admin</title>
+</head>
+<body onload="loadStats()">
+    <header>
+        <h1>Welcome Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="adminViewUsers.html">View Users</a></li>
+                <li><a href="adminStats.html" class="checked">Stats</a></li>
+            </ul>
+        </nav>
+        <button onclick="logOut()" class="logout-button">Log Out</button>
+
+    </header>
+    <main class="stats">
+        <div id="pets-chart"></div>
+        <div id="users-chart"></div>
+    </main>
+    
+</body>
+</html>

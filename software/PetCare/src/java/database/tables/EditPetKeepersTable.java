@@ -93,6 +93,35 @@ public class EditPetKeepersTable {
         }
         return null;
     }
+
+    public ArrayList<PetKeeper> databaseToAllPetKeepers() throws SQLException, ClassNotFoundException {
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("SELECT * FROM petkeepers");
+            if (rs != null) {
+                ArrayList<PetKeeper> petKeepersList = new ArrayList<>();
+
+                while (rs.next()) {
+                    String json = DB_Connection.getResultsToJSON(rs);
+                    Gson gson = new Gson();
+                    PetKeeper user = gson.fromJson(json, PetKeeper.class);
+                    petKeepersList.add(user);
+                }
+
+                return petKeepersList;
+            }
+
+            return new ArrayList<>();  // if rs is null
+        } catch (Exception e) {
+            System.err.println("Got an exception! 2");
+            System.err.println(e.getMessage());
+        }
+
+        return new ArrayList<>();  // return an empty list if an exception occurs
+    }
     
     public PetKeeper databaseToPetKeepers(String username, String password) throws SQLException, ClassNotFoundException{
          Connection con = DB_Connection.getConnection();
@@ -282,5 +311,30 @@ public class EditPetKeepersTable {
     }
 
    
+    public void deletePetKeeper(String userID) throws SQLException, ClassNotFoundException {
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        try {
+            PetKeeper existingUser = checkIfUserExists("keeper_id", userID);
+
+            if (existingUser != null) {
+//                String deleteQuery = "DELETE FROM pets WHERE keeper_id = " + userID + ";";
+//                stmt.executeUpdate(deleteQuery);
+
+                String deleteQuery = "DELETE FROM petkeepers WHERE keeper_id = " + userID + ";";
+                stmt.executeUpdate(deleteQuery);
+
+                System.out.println("# The pet keeper with userID '" + userID + "' was successfully deleted from the database.");
+            } else {
+                System.out.println("# Pet keeper with userID '" + userID + "' not found in the database.");
+            }
+
+            stmt.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EditPetOwnersTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }
