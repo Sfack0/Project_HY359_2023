@@ -85,7 +85,7 @@ public class EditPetKeepersTable {
                 return user;
             }
 
-            return null;  //if rs is null
+            return null;
 
         } catch (Exception e) {
             System.err.println("Got an exception! 1");
@@ -114,7 +114,7 @@ public class EditPetKeepersTable {
                 return petKeepersList;
             }
 
-            return new ArrayList<>();  // if rs is null
+            return new ArrayList<>();
         } catch (Exception e) {
             System.err.println("Got an exception! 2");
             System.err.println(e.getMessage());
@@ -138,7 +138,7 @@ public class EditPetKeepersTable {
                 return user;
             }
 
-            return null;  //if rs is null
+            return null;
         } catch (Exception e) {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
@@ -302,7 +302,6 @@ public class EditPetKeepersTable {
             stmt.executeUpdate(insertQuery);
             System.out.println("# The pet owner was successfully added in the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {
@@ -319,10 +318,17 @@ public class EditPetKeepersTable {
             PetKeeper existingUser = checkIfUserExists("keeper_id", userID);
 
             if (existingUser != null) {
-//                String deleteQuery = "DELETE FROM pets WHERE keeper_id = " + userID + ";";
-//                stmt.executeUpdate(deleteQuery);
+                String deleteQuery = "DELETE FROM messages WHERE booking_id IN (SELECT booking_id FROM bookings WHERE keeper_id = " + userID + ");";
+                stmt.executeUpdate(deleteQuery);
 
-                String deleteQuery = "DELETE FROM petkeepers WHERE keeper_id = " + userID + ";";
+                deleteQuery = "DELETE FROM reviews WHERE keeper_id = " + userID + ";";
+                stmt.executeUpdate(deleteQuery);
+
+                deleteQuery = "DELETE FROM bookings WHERE keeper_id = " + userID + ";";
+                stmt.executeUpdate(deleteQuery);
+
+
+                deleteQuery = "DELETE FROM petkeepers WHERE keeper_id = " + userID + ";";
                 stmt.executeUpdate(deleteQuery);
 
                 System.out.println("# The pet keeper with userID '" + userID + "' was successfully deleted from the database.");

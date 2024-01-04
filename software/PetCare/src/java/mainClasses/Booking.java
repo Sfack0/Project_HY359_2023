@@ -11,38 +11,38 @@ package mainClasses;
  * @author Mike
  */
 public class Booking {
-    int borrowing_id,owner_id,pet_id,keeper_id;
-    String fromDate,toDate,status;
+    String booking_id, owner_id, pet_id, keeper_id;
+    String fromdate, todate, status;
     int price;
-    public int getBorrowing_id() {
-        return borrowing_id;
+    public String getBooking_id() {
+        return booking_id;
     }
 
-    public void setBorrowing_id(int borrowing_id) {
-        this.borrowing_id = borrowing_id;
+    public void setBooking_id(String booking_id) {
+        this.booking_id = booking_id;
     }
 
-    public int getOwner_id() {
+    public String getOwner_id() {
         return owner_id;
     }
 
-    public void setOwner_id(int owner_id) {
+    public void setOwner_id(String owner_id) {
         this.owner_id = owner_id;
     }
 
-    public int getPet_id() {
+    public String getPet_id() {
         return pet_id;
     }
 
-    public void setPet_id(int pet_id) {
+    public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
     }
 
-    public int getKeeper_id() {
+    public String getKeeper_id() {
         return keeper_id;
     }
 
-    public void setKeeper_id(int keeper_id) {
+    public void setKeeper_id(String keeper_id) {
         this.keeper_id = keeper_id;
     }
 
@@ -55,20 +55,20 @@ public class Booking {
     }
 
     
-    public String getFromDate() {
-        return fromDate;
+    public String getFromdate() {
+        return fromdate;
     }
 
-    public void setFromDate(String fromDate) {
-        this.fromDate = fromDate;
+    public void setFromdate(String fromDate) {
+        this.fromdate = fromDate;
     }
 
-    public String getToDate() {
-        return toDate;
+    public String getTodate() {
+        return todate;
     }
 
-    public void setToDate(String toDate) {
-        this.toDate = toDate;
+    public void setTodate(String toDate) {
+        this.todate = toDate;
     }
 
     public String getStatus() {

@@ -1,5 +1,5 @@
 body{
-  background-image: url("../resources/background.jpg");
+  background-image: url("../../resources/background.jpg");
   background-attachment: fixed;
   display: flex;
   flex: row; 
@@ -133,7 +133,7 @@ label, legend{
   margin: 0;
 }
 
-.login-button{
+.login-button, .guest-button{
   background-color: rgb(12, 125, 12);
   color: aliceblue;
   width: 100px;
@@ -143,6 +143,12 @@ label, legend{
   font-size: 16px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+
+.guest-button{
+  width: 150px;
+  margin: 0;
+  background-color: orange;
 }
 
 .map-button{

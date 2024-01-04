@@ -56,7 +56,6 @@ public class GetPetsServlet extends HttpServlet {
             EditPetsTable editPets = new EditPetsTable();
 
             ArrayList<Pet> pets = editPets.databaseToPets();
-
             for (Pet pet : pets) {
                 response.getWriter().write(editPets.petToJSON(pet) + "||");
             }

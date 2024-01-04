@@ -39,8 +39,8 @@ public class InitDatabase {
             init.initDatabase();
             init.initTables();
             init.addToDatabaseExamples();
-//        init.updateRecords();
-//        init.databaseToJSON();
+            init.updateRecords();
+//            init.databaseToJSON();
 
 //         init.deleteRecords();
     }
@@ -104,17 +104,17 @@ public class InitDatabase {
         ebt.addPetFromJSON(Resources.pet3);
         ebt.addPetFromJSON(Resources.pet4);
 
-        //EditBookingsTable editbookings = new EditBookingsTable();
-        //editbookings.addBookingFromJSON(Resources.booking1);
-        //editbookings.addBookingFromJSON(Resources.booking2);
-        //editbookings.addBookingFromJSON(Resources.booking3);
+        EditBookingsTable editbookings = new EditBookingsTable();
+        editbookings.addBookingFromJSON(Resources.booking1);
+        editbookings.addBookingFromJSON(Resources.booking2);
+        editbookings.addBookingFromJSON(Resources.booking3);
 
-        //EditMessagesTable editmessages = new EditMessagesTable();
-        //editmessages.addMessageFromJSON(Resources.message1);
-        //editmessages.addMessageFromJSON(Resources.message2);
+        EditMessagesTable editmessages = new EditMessagesTable();
+        editmessages.addMessageFromJSON(Resources.message1);
+        editmessages.addMessageFromJSON(Resources.message2);
 
-        //EditReviewsTable editRevs = new EditReviewsTable();
-        //editRevs.addReviewFromJSON(Resources.review1);
+        EditReviewsTable editRevs = new EditReviewsTable();
+        editRevs.addReviewFromJSON(Resources.review1);
     }
 
     public void databaseToJSON() throws ClassNotFoundException, SQLException {

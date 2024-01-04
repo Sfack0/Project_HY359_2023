@@ -10,14 +10,15 @@ package mainClasses;
  * @author mountant
  */
 public class Message {
-    int message_id, booking_id;
+    int message_id;
+    String booking_id;
     String message,datetime,sender;
 
-    public int getBooking_id() {
+    public String getBooking_id() {
         return booking_id;
     }
 
-    public void setBooking_id(int booking_id) {
+    public void setBooking_id(String booking_id) {
         this.booking_id = booking_id;
     }
 

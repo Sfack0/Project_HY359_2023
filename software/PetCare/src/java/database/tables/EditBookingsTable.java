@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +26,36 @@ public class EditBookingsTable {
         Booking r = jsonToBooking(json);
         createNewBooking(r);
     }
+
+    public ArrayList<Booking> databaseToAllBookings() throws SQLException, ClassNotFoundException {
+        Connection con = DB_Connection.getConnection();
+        Statement stmt = con.createStatement();
+
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("SELECT * FROM bookings");
+            if (rs != null) {
+                ArrayList<Booking> bookingList = new ArrayList<>();
+
+                while (rs.next()) {
+                    String json = DB_Connection.getResultsToJSON(rs);
+                    Gson gson = new Gson();
+                    Booking user = gson.fromJson(json, Booking.class);
+                    bookingList.add(user);
+                }
+
+                return bookingList;
+            }
+
+            return new ArrayList<>();
+        } catch (Exception e) {
+            System.err.println("Got an exception! 2");
+            System.err.println(e.getMessage());
+        }
+
+        return new ArrayList<>();
+    }
+
 
     public Booking databaseToBooking(int id) throws SQLException, ClassNotFoundException {
         Connection con = DB_Connection.getConnection();
@@ -106,8 +137,8 @@ public class EditBookingsTable {
                     + "'" + bor.getOwner_id() + "',"
                     + "'" + bor.getPet_id() + "',"
                      + "'" + bor.getKeeper_id()+ "',"
-                    + "'" + bor.getFromDate() + "',"
-                    + "'" + bor.getToDate() + "',"
+                    + "'" + bor.getFromdate() + "',"
+                    + "'" + bor.getTodate() + "',"
                     + "'" + bor.getStatus() + "',"
                      + "'" + bor.getPrice() + "'"
                     + ")";

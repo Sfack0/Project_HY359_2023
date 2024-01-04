@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/servlets/BookingsServlet.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>88</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
         <group name="Project">
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/database/tables/EditPetOwnersTable.java</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/database/tables/EditPetKeepersTable.java</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/CheckEmailServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/GetPetKeepers.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/GetPetOwners.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/MessagesServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/DeletePetKeeperServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/ReviewsServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/LoginServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/CheckUsernameServlet.java</file>
+            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/GetPetsServlet.java</file>
             <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/DeletePetOwnerServlet.java</file>
-            <file>file:/C:/Users/giann/Downloads/CSD/HY359/New/Project_HY359_2023/software/PetCare/src/java/servlets/AddPetKeeperServlet.java</file>
         </group>
     </open-files>
 </project-private>

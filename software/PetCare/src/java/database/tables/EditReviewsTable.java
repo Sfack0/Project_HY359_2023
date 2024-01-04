@@ -105,11 +105,9 @@ public class EditReviewsTable {
                     + "'" + rev.getReviewScore() + "'"
                     + ")";
             //stmt.execute(table);
-            System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);
             System.out.println("# The review was successfully added in the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {

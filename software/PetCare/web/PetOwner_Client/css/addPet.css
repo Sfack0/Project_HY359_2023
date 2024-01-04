@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("../../resources/background.jpg");
+  background-attachment: fixed;
+
+}
+
+
+.allForms {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px auto;
+}
+
+form{
+  padding-bottom: 20px;
+}
+
+input{
+    background-color: rgb(235, 235, 235);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    transition: background-color 0.3s ease;
+    margin-bottom: 12px;
+}
+
+input:hover{
+  background-color: white;
+  box-shadow: 0 0 7px rgba(85, 85, 85, 0.7);
+}
+
+label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 5px;
+    font-weight: 800;
+    display: block;
+}
+
+
+.query-title{
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+
+
+.button {
+  background-color: rgb(12, 125, 12);
+  color: aliceblue;
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+
+.warnings, .successes{
+  position: absolute;
+  text-align: center;
+  padding: 4px;
+  color: white;
+}
+
+.warnings{
+  background-color: red;
+}
+
+.successes{
+  background-color: rgb(1, 178, 1);
+}
+

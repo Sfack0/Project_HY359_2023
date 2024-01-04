@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="Register_Login_Client/css/register.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="Register_Login_Client/js/ajax.js"></script>  
     <script src="Register_Login_Client/js/script.js"></script>
     <script src="Register_Login_Client/js/map.js"></script>      
-    <script src="Register_Login_Client/js/ajax.js"></script>  
     <script src="Register_Login_Client/js/cookies.js"></script>  
 
 
@@ -42,14 +42,14 @@
         <div class="password-field">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" class="big-field" placeholder="8-15 characters" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$" oninput="passwordStrength()">
-            <img class="show-password" src="Register_Login_Client/resources/closed_eye.png" alt="open_eye" id="show-password" onclick="passwordVisibility()">
+            <img class="show-password" src="resources/closed_eye.png" alt="open_eye" id="show-password" onclick="passwordVisibility()">
             <div class="password-strength" id="password-strength">Weak password</div>
         </div>
 
         <div class="password-field"> 
             <label for="confirm-password">Confirm Password</label>
             <input type="password" id="confirm-password" name="confirm-password" class="big-field" placeholder="8-15 characters" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$">
-            <img class="show-password" src="Register_Login_Client/resources/closed_eye.png" alt="closed_eye" id="show-password-conf" onclick="passwordVisibility()">
+            <img class="show-password" src="resources/closed_eye.png" alt="closed_eye" id="show-password-conf" onclick="passwordVisibility()">
         </div>
 
         <div>
@@ -438,8 +438,10 @@
             <input type="password" id="password-login" name="password-login" class="big-field" >
         </div>
 
-        <button class="login-button" onclick="login()">Login</button>
-
+        <div>
+            <button class="login-button" onclick="login()">Login</button>
+            <button class="guest-button" onclick="loginGuest()">Login as guest</button>
+        </div>
     </form>
 
 </body>

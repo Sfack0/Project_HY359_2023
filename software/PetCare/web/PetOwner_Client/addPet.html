@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="js/petOwner.js" defer></script>
+ <script src="../Register_Login_Client/js/script.js"></script>
+ <script src="../Register_Login_Client/js/cookies.js"></script>
+ 
+  <link rel="stylesheet" href="css/addPet.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/owner.css">
+
+</head>
+
+<body>
+	<header>
+        <h1>Welcome Owner</h1>
+        <nav>
+            <ul>
+                <li><a href="petOwnerLoggedIn.html" >Profile</a></li>
+                <li><a href="addPet.html" class="checked">Add Pet</a></li>
+                <li><a href="petInfo.html">Pet's Information</a></li>
+                <li><a href="findPetKeeper.html">Find Pet Keeper</a></li>
+                <li><a href="bookings.html">Your Bookings</a></li>
+            </ul>
+        </nav>
+        <button onclick="logOut()" class="logout-button">Log Out</button>
+
+    </header>
+	<div class="allForms" id="choices"> 
+		<h3 class='query-title'> Add new pet</h3>
+		<form id="addPetForm" name="addPetForm" onsubmit='addPet();return false;'>
+			<label for='pet_id'>Pet Id:</label>
+			<input id='pet_id' type='text' name='pet_id'  pattern='\d+' required><br>
+		
+			<label for='name'>Pet Name:</label>
+			<input id='name' type='text' name='name' pattern='[A-Za-z\s]+' required><br>
+		
+			<label for='type'>Pet Type:</label>
+			<input id='type' type="text" name='type' pattern='[A-Za-z\s]+' required><br>
+		
+			<label for='breed'>Pet Breed:</label>
+			<input id='breed' type="text" name='breed' pattern='[A-Za-z\s]+' required><br>
+		
+			<label for='gender'>Pet Gender:</label>
+			<input id='gender' type="text" name='gender' pattern='[A-Za-z\s]+' required><br>
+		
+			<label for='birthyear'>Pet Birth Year:</label>
+			<input id='birthyear' type="number" name='birthyear' required><br>
+		
+			<label for='weight'>Pet Weight:</label>
+			<input id='weight' type="number" name='weight' required><br>
+		
+			<label for='description'>Pet Description:</label>
+			<input id='description' type="text" name='description' pattern='[A-Za-z\s]+' required><br>
+		
+			<label for='photo'>Pet Photo:</label>
+			<input id='photo' type="text" name='photo' required><br>
+		
+			<button type="submit" class="button">Add</button>
+		</form>		
+	</div>
+
+	
+
+</body>
+</html>
+

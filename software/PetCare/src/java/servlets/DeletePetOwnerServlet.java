@@ -49,7 +49,6 @@ public class DeletePetOwnerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        System.out.println("Username Parameter 1: " + request.getParameter("username"));
 
     }
 
@@ -89,10 +88,6 @@ public class DeletePetOwnerServlet extends HttpServlet {
                 requestBody.append(line);
             }
 
-            // Print the entire request body for debugging purposes
-            System.out.println("Request Body: " + requestBody.toString());
-
-            // Split the parameter using "=" as the delimiter
             String[] keyValue = requestBody.toString().split("=");
             String userID = keyValue[1];
             EditPetOwnersTable editOwner = new EditPetOwnersTable();

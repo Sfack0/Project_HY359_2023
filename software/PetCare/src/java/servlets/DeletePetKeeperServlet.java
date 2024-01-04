@@ -97,14 +97,9 @@ public class DeletePetKeeperServlet extends HttpServlet {
             requestBody.append(line);
         }
 
-        // Print the entire request body for debugging purposes
-        System.out.println("Request Body: " + requestBody.toString());
-
         try {
-            // processRequest should be called after reading the request body
             processRequest(request, response);
 
-            // Split the parameter using "=" as the delimiter
             String[] keyValue = requestBody.toString().split("=");
             String userID = keyValue[1];
             EditPetKeepersTable editKeeper = new EditPetKeepersTable();

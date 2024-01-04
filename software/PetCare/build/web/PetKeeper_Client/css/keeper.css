@@ -1,0 +1,406 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(105, 105, 105);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700; 
+}
+
+.checked{
+    color: #ffd700; 
+}
+
+
+.user-sections{
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-profiles{
+    padding: 10px;
+    width: 40%;
+    background-color: rgb(216, 216, 216);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pet-owner, .pet-keeper{
+    border: 1px solid black;
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pet-owner p, .pet-keeper p{
+    margin: 5px 0;
+}
+
+.delete-button, .logout-button{
+    background-color: rgb(253, 0, 0);
+    color: aliceblue;
+    padding: 5px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.logout-button{
+    position: absolute;
+    top: 0;
+    right: 50px;
+
+    font-size: 16px;
+
+}
+
+
+.stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats p{
+    margin: 0;
+    padding: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: black;
+    color: white;
+}
+
+.myBookings {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 0px;
+    background-color: #e4e4e4;
+}
+
+.booking-header, .booking{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) repeat(1, 0.15fr) repeat(1, 1fr) repeat(1, 0.15fr) repeat(6, 1fr);
+
+    align-items: center;
+    padding: 15px 0;
+    border: 1px solid black;    
+    background-color: #d3d3d3;
+}
+
+.booking-header{
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+.booking{
+    border-top: 3px solid black;
+    position: relative;
+}
+
+.booking-info {
+    text-align: center;
+    margin: 5px 0;
+    max-width: 13ch;
+    word-wrap: break-word;
+}
+
+.accept-button, .reject-button, .send-message-button {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.accept-button{
+    background-color: #17c71f;
+}
+.reject-button{
+    background-color: #ca290c;
+}
+
+.send-message-button{
+    background-color: #1317ff;
+}
+
+.accept-button:hover, .reject-button:hover {
+    background-color: #1a1a1a;
+}
+
+.extra-info{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+.extra-info-owner,.extra-info-pet{
+  background-color: white;
+  position: absolute;
+  margin-left: 10px; 
+  display: none; 
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  width: 220px;
+}
+
+.extra-info-owner{
+    top: 50px;
+    left: 20px;
+}
+
+.extra-info-pet {
+    top: 50px;
+    left: 160px;
+}
+
+.extra-info:hover + .extra-info-owner,
+.extra-info:hover + .extra-info-pet {
+  display: flex; 
+}
+
+
+.requested-color{
+    background-color: rgb(159, 69, 255);
+}
+
+.accepted-color{
+    background-color: rgb(68, 255, 0);
+}
+
+.finished-color{
+    background-color: rgb(255, 217, 0);
+}
+
+.rejected-color{
+    background-color: rgb(251, 43, 43);
+}
+
+
+
+.messages-container {
+    position: absolute;
+    width: 50%;
+    height: 400px;
+    background-color: white;
+    top: 25%;
+    left: 25%;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto; 
+    border: 2px solid black;
+
+}
+
+.left-sender-message{
+    display: flex;
+    align-self: self-start;
+    align-items: center;
+}
+
+.right-sender-message{
+    display: flex;
+    align-self: self-end;
+    align-items: center;
+}
+
+.message-sender{
+    padding: 10px 5px;
+    background-color: #2e93ff;
+}
+.message {
+    margin: 10px;
+    padding: 10px;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+    max-width: 25ch;
+    word-wrap: break-word;
+}
+
+
+
+.left-message{
+    text-align: left;
+    background-color: #757575;
+    color: white;
+}
+
+.right-message {
+    text-align: right;
+    background-color: #4c6baf;
+    color: white;
+    align-self: self-end;
+}
+
+.left-message::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    border-width: 12px; 
+    border-style: solid;
+    border-color: transparent #757575 transparent transparent;
+    transform: translateY(-50%);
+}
+
+.right-message::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent transparent transparent #4c6baf;
+    transform: translateY(-50%);
+}
+
+
+.new-message-input {
+    position: absolute;
+    width: 48%;
+    top: 78.5%;
+    left: 25%;
+    margin-top: auto; 
+    display: none;
+    align-items: center;
+    padding: 10px;
+    background-color: #c4c4c4; 
+    border: 2px solid black;
+}
+
+.new-message-input input {
+    flex: 1; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.new-message-input button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-messages{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: none;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.834);
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+
+.myReviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-container {
+    width: 50%;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.review-container h4 {
+    margin: 2px;
+    color: #333;
+}
+
+.review-container p.review {
+    font-size: 14px;
+    color: #666;
+}
+
+.review-container p.score {
+    font-size: 26px;
+    color: #ff9800;
+    margin: 0;
+}
+
+.review-container[data-score="1"] .score::before {
+    content: '★☆☆☆☆';
+    letter-spacing: 3px;
+}
+
+.review-container[data-score="2"] .score::before {
+    content: '★★☆☆☆';
+    letter-spacing: 3px;
+}
+
+.review-container[data-score="3"] .score::before {
+    content: '★★★☆☆';
+    letter-spacing: 3px;
+}
+
+.review-container[data-score="4"] .score::before {
+    content: '★★★★☆';
+    letter-spacing: 3px;
+}
+
+.review-container[data-score="5"] .score::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+}

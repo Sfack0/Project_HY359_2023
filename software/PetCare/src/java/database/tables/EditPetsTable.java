@@ -53,6 +53,7 @@ public class EditPetsTable {
                 Pet pet = gson.fromJson(json, Pet.class);
                 pets.add(pet);
             }
+
             return pets;
 
         } catch (Exception e) {
@@ -173,11 +174,9 @@ public class EditPetsTable {
                     + "'" + bt.getPhoto() + "'"
                     + ")";
             //stmt.execute(table);
-            System.out.println(insertQuery);
             stmt.executeUpdate(insertQuery);
             System.out.println("# The pet was successfully added in the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {

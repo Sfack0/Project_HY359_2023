@@ -1,5 +1,5 @@
 body{
-    background-image: url("../resources/background.jpg");
+    background-image: url("../../resources/background.jpg");
     background-attachment: fixed;
 }
 
@@ -12,6 +12,7 @@ body{
     margin: 0 auto;
     border: 2px solid black;
     padding: 20px;
+    margin-top: 20px;
     border-radius: 20px;
     gap: 30px;
 } 

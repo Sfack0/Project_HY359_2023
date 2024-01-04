@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="js/petOwner.js" defer></script>
+ <script src="../Register_Login_Client/js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/owner.css">
+  <script src="../Register_Login_Client/js/cookies.js"></script>
+  <link rel="stylesheet" href="../Register_Login_Client/css/loggedin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+
+</head>
+
+<body onload="loadBookings()">
+	<header>
+        <h1>Welcome Owner</h1>
+        <nav>
+            <ul>
+                <li><a href="petOwnerLoggedIn.html" >Profile</a></li>
+                <li><a href="addPet.html">Add Pet</a></li>
+                <li><a href="petInfo.html" >Pet's Information</a></li>
+                <li><a href="findPetKeeper.html">Find Pet Keeper</a></li>
+                <li><a href="bookings.html" class="checked">Your Bookings</a></li>
+            </ul>
+        </nav>
+        <button onclick="logOut()" class="logout-button">Log Out</button>
+
+    </header>
+
+    <main class="all-bookings">
+        <div class="booking-headers">
+            <p>Booking ID</p>
+            <p>Pet Keeper</p>
+            <p>From Date</p>
+            <p>To Date</p>
+            <p>Price</p>
+            <p>Status</p>
+            <p></p>
+        </div>
+    </main>
+    <div class="review-pop-up">
+        
+    </div>
+    <div class="close-messages" onclick="closeMessages()">X</div>
+
+    <div class="messages-container">
+
+ 
+    </div>
+
+    <div class="new-message-input">
+        <input type="text" id="newMessageInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    
+
+</body>
+</html>
+

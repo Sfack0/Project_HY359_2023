@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/petOwner.js"></script>
+    <script src="../Register_Login_Client/js/ajax.js"></script>
+    <script src="../Register_Login_Client/js/script.js"></script>
+    <script src="../Register_Login_Client/js/cookies.js"></script>
+
+    <link rel="stylesheet" href="../Register_Login_Client/css/loggedin.css">
+    <link rel="stylesheet" href="css/owner.css">
+
+    <title>Document</title>
+</head>
+<body onload="initLoginPage()">
+    <header>
+        <h1>Welcome Owner</h1>
+        <nav>
+            <ul>
+                <li><a href="petOwnerLoggedIn.html" class="checked" >Profile</a></li>
+                <li><a href="addPet.html" >Add Pet</a></li>
+                <li><a href="petInfo.html">Pet's Information</a></li>
+                <li><a href="findPetKeeper.html">Find Pet Keeper</a></li>
+                <li><a href="bookings.html">Your Bookings</a></li>
+            </ul>
+        </nav>
+        <button onclick="logOut()" class="logout-button">Log Out</button>
+
+    </header>
+
+    <main class="user-info">
+
+
+        <dl>
+        </dl>
+        
+
+    </main>
+
+</header>
+</body>
+</html>

@@ -277,15 +277,19 @@ function checkOutdoor(){
       pass = $('#confirm-password');
   
     if (eyeImage.src.includes("closed_eye")) {
-      eyeImage.src = "Register_Login_Client/resources/open_eye.png";
+      eyeImage.src = "resources/open_eye.png";
       pass.attr('type', 'text'); 
     } else {
-      eyeImage.src = "Register_Login_Client/resources/closed_eye.png";
+      eyeImage.src = "resources/closed_eye.png";
       pass.attr('type', 'password'); 
     }
   }
 
 
+  function loginGuest(){
+    event.preventDefault(); 
+    window.location.href = 'Guest_Client/guest.html';
+  }
   
  
 
@@ -322,7 +326,12 @@ function checkOutdoor(){
             setCookie('user', userJson, 30);
             setCookie('userType', userType, 30);
 
-            window.location.href = 'Register_Login_Client/loggedin.html';
+            if(userType === 'owner')
+              window.location.href = 'PetOwner_Client/petOwnerLoggedIn.html';
+            else if(userType === 'keeper')
+              window.location.href = 'PetKeeper_Client/petKeeperLoggedIn.html';
+            
+
 
         }else{
             displayWarning( $('#username-login'), "There is no user with this username and password")
@@ -331,8 +340,11 @@ function checkOutdoor(){
 }
 
 function logOut(){
-    deleteCookie('user');
-    deleteCookie('userType');
+    if (getCookie("user") !== null){
+      deleteCookie('user');
+      deleteCookie('userType');
+    }
+    
     window.location.href = '../register.html';
 }
 
@@ -341,8 +353,8 @@ function alreadyLoggedIn(){
     if (getCookie("user") !== null){
       if(getCookie("user") === 'admin'){
         window.location.href = 'Admin_Login_Client/adminViewUsers.html';
-      }else{
-        window.location.href = 'Register_Login_Client/loggedin.html';
+      }else if(getCookie("userType") === 'owner'){
+        window.location.href = 'PetOwner_Client/petOwnerLoggedIn.html';
       }
     }
 }
@@ -403,6 +415,9 @@ function initLoginPage() {
 
           infoClassDl.append(div);
       }
+
+      
+      
   }
 
   var editableElements = document.querySelectorAll('[contenteditable="true"]');
@@ -417,6 +432,56 @@ function initLoginPage() {
 
         });
     });
+
+    
+    userType = getCookie('userType');
+    getBookings(function(bookingJson){
+      let bookings = [];
+      bookings.push(...bookingJson.map(jsonString => JSON.parse(jsonString)));
+
+      if(userType == 'keeper'){
+          let totalBookings=0, totalMoney=0, totalDays=0;
+
+          for(let booking of bookings){
+              if(booking.keeper_id == user.keeper_id && booking.status == 'finished'){
+
+                totalBookings++;
+                totalMoney += parseInt(booking.price);
+
+                let fromDate = new Date(booking.fromdate);
+                let toDate = new Date(booking.todate);
+                let diffInMilliseconds = toDate - fromDate;
+                let diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+                
+                totalDays += diffInDays;
+              }
+          }
+          $('.user-info').html( $('.user-info').html() + `<div class="stats">
+                <p>total bookings: ${totalBookings}</p>
+                <p>total days pet keeping: ${totalDays} </p>
+                <p>money made: ${totalMoney}$</p>
+
+            </div>`)
+      }
+    });
+      
+}
+
+
+function getBookings(callback) {
+  $.ajax({
+      type: 'GET',
+      url: '../BookingsServlet',
+      data: {},
+      success: function(response) {
+          let keepersJson = response.split("||")
+          keepersJson.pop()  //last element is an empty string
+          callback(keepersJson)
+      },
+      error: function() {
+          console.error("Error getBookings");
+      }
+  });
 }
 
 

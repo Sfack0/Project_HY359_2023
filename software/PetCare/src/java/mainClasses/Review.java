@@ -11,7 +11,8 @@ package mainClasses;
  */
 public class Review {
 
-    int review_id,owner_id,keeper_id;
+    int review_id;
+    String owner_id, keeper_id;
     String reviewText,reviewScore;
 
     public int getReview_id() {
@@ -22,19 +23,19 @@ public class Review {
         this.review_id = review_id;
     }
 
-    public int getOwner_id() {
+    public String getOwner_id() {
         return owner_id;
     }
 
-    public void setOwner_id(int owner_id) {
+    public void setOwner_id(String owner_id) {
         this.owner_id = owner_id;
     }
 
-    public int getKeeper_id() {
+    public String getKeeper_id() {
         return keeper_id;
     }
 
-    public void setKeeper_id(int keeper_id) {
+    public void setKeeper_id(String keeper_id) {
         this.keeper_id = keeper_id;
     }
 

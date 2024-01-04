@@ -1,8 +1,3 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
-
 
 // function getPetUser() {
 //     var data = $('#registration-form :input:not("#confirm-password")').serialize();
@@ -37,7 +32,6 @@ function addPetUser(latlon) {
             success: function(response) {
 
                 login($('#username').val(), $('#password').val())
-                // Handle successful response here
             },
             error: function(xhr, status, error) {
 
@@ -51,7 +45,6 @@ function addPetUser(latlon) {
             success: function(response) {
 
                 login($('#username').val(), $('#password').val())
-                // Handle successful response here
             },
             error: function(xhr, status, error) {
                 
@@ -113,6 +106,7 @@ function tryToLogin(username, password, callback){
 
 
 function changeValue(field, value, user, userType){
+    console.log("field: " + field);
     $.ajax({
         type: 'POST',
         url: '../ChangeValueServlet', 

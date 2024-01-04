@@ -6,20 +6,16 @@ function loadUsers() {
         petOwners.push(owner);
       }
   
-      // Select the user-profiles container
       const userProfilesContainer = document.querySelector('.user-profiles.petowner-profiles');
   
 
   
-      // Iterate through petOwners and create profiles
       for (let i = 0; i < petOwners.length; i++) {
         const owner = petOwners[i];
   
-        // Create a new pet-owner div
         const petOwnerDiv = document.createElement('div');
         petOwnerDiv.classList.add('pet-owner');
   
-        // Fill in the content for the pet-owner div
         petOwnerDiv.innerHTML = `
           <h4>Owner ID: ${owner.owner_id}</h4>
           <p id='username'><strong>Username:</strong> ${owner.username}</p>
@@ -28,7 +24,6 @@ function loadUsers() {
           <button class="delete-button"  onclick="deletePetOwners('${owner.owner_id}', this)">Delete User</button>
         `;
   
-        // Append the pet-owner div to the user-profiles container
         userProfilesContainer.appendChild(petOwnerDiv);
       }
     });
@@ -40,20 +35,16 @@ function loadUsers() {
           petKeepers.push(keeper);
         }
     
-        // Select the user-profiles container
         const userProfilesContainer = document.querySelector('.user-profiles.petkeeper-profiles');
     
   
     
-        // Iterate through petOwners and create profiles
         for (let i = 0; i < petKeepers.length; i++) {
           const keeper = petKeepers[i];
     
-          // Create a new pet-owner div
           const petKeeperDiv = document.createElement('div');
           petKeeperDiv.classList.add('pet-keeper');
     
-          // Fill in the content for the pet-owner div
           petKeeperDiv.innerHTML = `
             <h4>Keeper ID: ${keeper.keeper_id}</h4>
             <p><strong>Username:</strong> ${keeper.username}</p>
@@ -62,7 +53,6 @@ function loadUsers() {
             <button class="delete-button"  onclick="deletePetKeepers('${keeper.keeper_id}', this)">Delete User</button>
           `;
     
-          // Append the pet-owner div to the user-profiles container
           userProfilesContainer.appendChild(petKeeperDiv);
         }
       });
@@ -76,8 +66,6 @@ function loadUsers() {
     const userProfilesContainer = document.querySelector('.user-profiles.petkeeper-profiles');
     const petKeeperDiv = button.closest('.pet-keeper');
 
-    console.log(userProfilesContainer);
-    console.log(petKeeperDiv);
     if (petKeeperDiv) 
       userProfilesContainer.removeChild(petKeeperDiv);
     
@@ -90,8 +78,6 @@ function loadUsers() {
     const userProfilesContainer = document.querySelector('.user-profiles.petowner-profiles');
     const petOwnerDiv = button.closest('.pet-owner');
 
-    console.log(userProfilesContainer);
-    console.log(petOwnerDiv);
     if (petOwnerDiv) 
       userProfilesContainer.removeChild(petOwnerDiv);
     
@@ -108,7 +94,6 @@ function loadUsers() {
           pets[petType] = (pets[petType] || 0) + 1;
         }
 
-        console.log(pets);
         
         getPetOwners(function (petOwnersJson) {
           let ownersCount = petOwnersJson.length;
@@ -119,9 +104,29 @@ function loadUsers() {
 
             let users = {'Pet Keepers' : keepersCount, 'Pet Owners' : ownersCount};
 
-              google.charts.setOnLoadCallback(function(){
-                drawChart(pets, 'pets');
-                drawChart(users, 'users');
+            getBookings(function (bookingJson){
+
+              let bookings = [];
+              bookings.push(...bookingJson.map(jsonString => JSON.parse(jsonString)));
+              let totalMoney = 0;
+
+              for(let booking of bookings){
+                if(booking.status == 'finished'){
+                  totalMoney += booking.price;
+                }
+              }
+
+              let earnings = {'Website Earnings' : totalMoney*0.15, 'Pet Keepers Earnings' : totalMoney*0.85};
+
+
+
+                google.charts.setOnLoadCallback(function(){
+                  drawChart(pets, 'pets');
+                  drawChart(users, 'users');
+                  drawChart(earnings, 'earnings');
+                });
+            
+
               });
           });
           
@@ -137,16 +142,16 @@ function loadUsers() {
     }
 
     var options = {
-      'title': typeOfData === 'pets' ? 'Pets' : 'Users', // Adjust title based on typeOfData
+      'title': typeOfData === 'pets' ? 'Pets' : 'Users',
       'width': '100%',
       'height': 400,
       'backgroundColor': '#cccccc',
       'titleTextStyle': {
-        'fontSize': 18 // Set the font size for the title
+        'fontSize': 18 
       },
       'legend': {
         'textStyle': {
-            'fontSize': 14 // Set the font size for the legend (fields)
+            'fontSize': 14 
         }
       }
     };    

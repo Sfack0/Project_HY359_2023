@@ -60,6 +60,22 @@
         <servlet-name>GetPetsServlet</servlet-name>
         <servlet-class>servlets.GetPetsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetBookingsServlet</servlet-name>
+        <servlet-class>servlets.GetBookingsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BookingsServlet</servlet-name>
+        <servlet-class>servlets.BookingsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReviewsServlet</servlet-name>
+        <servlet-class>servlets.ReviewsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MessagesServlet</servlet-name>
+        <servlet-class>servlets.MessagesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetKeeper</servlet-name>
         <url-pattern>/GetKeeper</url-pattern>
@@ -119,6 +135,22 @@
     <servlet-mapping>
         <servlet-name>GetPetsServlet</servlet-name>
         <url-pattern>/GetPetsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetBookingsServlet</servlet-name>
+        <url-pattern>/GetBookingsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookingsServlet</servlet-name>
+        <url-pattern>/BookingsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReviewsServlet</servlet-name>
+        <url-pattern>/ReviewsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessagesServlet</servlet-name>
+        <url-pattern>/MessagesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

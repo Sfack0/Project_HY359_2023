@@ -32,7 +32,6 @@ function getPetKeepers(callback) {
 }
 
 function deletePetOwnersAjax(userID) {
-    console.log(userID);    
     
     $.ajax({
         type: 'DELETE',
@@ -41,13 +40,12 @@ function deletePetOwnersAjax(userID) {
         success: function() {
         },
         error: function() {
-            console.log("ERRORRRR");
+            console.log("deletePetOwnersAjax error");
         }
     });
 }
 
 function deletePetKeepersAjax(userID) {
-    console.log(userID);    
     
     $.ajax({
         type: 'DELETE',
@@ -56,7 +54,7 @@ function deletePetKeepersAjax(userID) {
         success: function() {
         },
         error: function() {
-            console.log("ERRORRRR");
+            console.log("deletePetKeepersAjax error");
         }
     });
 }
@@ -74,6 +72,22 @@ function getPets(callback) {
         },
         error: function() {
             console.error("Error getPets");
+        }
+    });
+}
+
+function getBookings(callback) {
+    $.ajax({
+        type: 'GET',
+        url: '../BookingsServlet',
+        data: {},
+        success: function(response) {
+            let keepersJson = response.split("||")
+            keepersJson.pop()  //last element is an empty string
+            callback(keepersJson)
+        },
+        error: function() {
+            console.error("Error getBookings");
         }
     });
 }

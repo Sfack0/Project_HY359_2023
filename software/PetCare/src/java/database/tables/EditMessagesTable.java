@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mainClasses.Message;
-import mainClasses.Pet;
 
 /**
  *
@@ -34,7 +33,7 @@ public class EditMessagesTable {
         return msg;
     }
 
-    public String reviewToJSON(Message msg) {
+    public String messageToJSON(Message msg) {
         Gson gson = new Gson();
 
         String json = gson.toJson(msg, Message.class);
@@ -106,7 +105,6 @@ public class EditMessagesTable {
             stmt.executeUpdate(insertQuery);
             System.out.println("# The message was successfully added in the database.");
 
-            /* Get the member id from the database and set it to the member */
             stmt.close();
 
         } catch (SQLException ex) {
