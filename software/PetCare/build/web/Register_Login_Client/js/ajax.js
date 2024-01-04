@@ -106,7 +106,6 @@ function tryToLogin(username, password, callback){
 
 
 function changeValue(field, value, user, userType){
-    console.log("field: " + field);
     $.ajax({
         type: 'POST',
         url: '../ChangeValueServlet', 

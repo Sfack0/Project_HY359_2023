@@ -446,7 +446,6 @@ function initLoginPage() {
               if(booking.keeper_id == user.keeper_id && booking.status == 'finished'){
 
                 totalBookings++;
-                console.log(totalBookings);
                 totalMoney += parseInt(booking.price);
 
                 let fromDate = new Date(booking.fromdate);

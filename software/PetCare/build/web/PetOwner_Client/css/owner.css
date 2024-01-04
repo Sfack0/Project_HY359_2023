@@ -33,11 +33,11 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd700; /* Change color on hover */
+    color: #ffd700; 
 }
 
 .checked{
-    color: #ffd700; /* Change color on hover */
+    color: #ffd700; 
 }
 
 
@@ -348,7 +348,7 @@ button:hover {
 }
 
 .star-rating input:checked ~ label:before {
-    color: #FFD700; /* Yellow star color for checked input */
+    color: #FFD700;
 }
 
 .messages-container {
@@ -413,7 +413,7 @@ button:hover {
     position: absolute;
     top: 50%;
     left: -20px;
-    border-width: 12px; /* Increase the border-width for a larger triangle */
+    border-width: 12px; 
     border-style: solid;
     border-color: transparent #757575 transparent transparent;
     transform: translateY(-50%);
